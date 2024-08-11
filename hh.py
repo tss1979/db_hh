@@ -30,10 +30,5 @@ class HeadHunterAPI:
         for id_ in top_id:
             url = 'https://api.hh.ru/employers/' + id_
             response = requests.get(url, headers=self.headers, params=self.params)
-            # print(response.json()['name'])
-            # print(response.json()['vacancies_url'])
-            # print(response.json()['site_url'])
-            # print(response.json()['area']['name'])
-            # print(response.json()['id'])
             self.employers.append(response.json())
         return self.employers
